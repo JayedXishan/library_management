@@ -42,7 +42,7 @@ booksRoutes.get('/',async (req:Request, res : Response)=>{
 
     res.status(201).json({
         success: true,
-        message: "book created",
+        message: "Books retrieved successfully",
         books
     })
 
@@ -53,7 +53,7 @@ booksRoutes.get('/:bookId',async (req:Request, res : Response)=>{
 
     res.status(201).json({
         success: true,
-        message: "book created",
+        message: "Book retrieved successfully",
         book
     })
 
@@ -65,7 +65,7 @@ booksRoutes.put('/:bookId',async (req:Request, res : Response)=>{
 
     res.status(201).json({
         success: true,
-        message: "book updated",
+        message: "Book updated successfully",
         book
     })
 
@@ -76,7 +76,7 @@ booksRoutes.delete('/:bookId',async (req:Request, res : Response)=>{
 
     res.status(201).json({
         success: true,
-        message: "book deleted",
+        message: "Book deleted successfully",
         book
     })
 

@@ -26,3 +26,18 @@ Features :
 4. Getting total borrowed book by book Id.
 5. Automatic book availability update based on borrowed quantity
 6. Separate controllers, routes, models, and validation schemas
+
+Tech stack :
+
+1. Runtime: Node.js
+2. Framework: Express.js
+3. Database: MongoDB
+4. ODM: Mongoose
+5. Validation: Zod
+6. Language: TypeScript
+
+Prerequisites :
+
+1. node.js
+2. npm
+3. mongoDB
