@@ -58,7 +58,7 @@ booksRoutes.get('/:bookId',async (req:Request, res : Response)=>{
     })
 
 })
-booksRoutes.patch('/:bookId',async (req:Request, res : Response)=>{
+booksRoutes.put('/:bookId',async (req:Request, res : Response)=>{
     const updatedBody =req.body;
     const bookId=req.params.bookId;
     const book = await Book.findByIdAndUpdate(bookId,updatedBody,{new :true});
