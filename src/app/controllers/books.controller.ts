@@ -38,13 +38,24 @@ booksRoutes.post('/',async (req:Request, res : Response)=>{
 })
 
 booksRoutes.get('/',async (req:Request, res : Response)=>{
-    const books = await Book.find();
+    try {
+        const { filter, sortBy = 'createdAt', sort = 'asc', limit = '10' } = req.query;
 
-    res.status(201).json({
+        const query: any = {};
+        if (filter) query.genre = filter;
+
+        const books = await Book.find(query)
+        .sort({ [sortBy as string]: sort === 'desc' ? -1 : 1 })
+        .limit(parseInt(limit as string));
+
+        res.json({
         success: true,
-        message: "Books retrieved successfully",
-        books
-    })
+        message: 'Books retrieved successfully',
+        data: books,
+        });
+    } catch (err: any) {
+        res.status(500).json({ success: false, message: err.message });
+    }
 
 })
 booksRoutes.get('/:bookId',async (req:Request, res : Response)=>{
